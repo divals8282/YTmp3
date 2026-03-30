@@ -63,7 +63,7 @@ export const downloadYoutubeVideo = (url: string): Promise<string> => {
     });
 
     yt.on("close", (code) => {
-      yt.stdin.end(); // important
+      yt.stdin.end();
 
       if (code === 0) resolve(filePath);
       else reject(new Error("yt-dlp exited with code " + code));

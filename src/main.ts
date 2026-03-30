@@ -1,7 +1,6 @@
 import "dotenv/config";
 
 import fs from "fs";
-import { ExecException } from "child_process";
 
 import { bot } from "./telegram_bot";
 import {
