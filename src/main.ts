@@ -48,12 +48,7 @@ bot.on("message", async (ctx) => {
         ctx.sendMessage("👽Enjoy!!!, TUC! TUC! TUC!👽");
         fs.unlink(mp4FilePath, () => {});
         fs.unlink(mp3FilePath, () => {});
-      } catch (error) {
-        fs.writeFile(
-          `./logs/error-${Date.now()}.log`,
-          (error as ExecException).toString(),
-          () => {},
-        );
+      } catch {
         ctx.reply("🤖An error occurred while processing your request🤖");
       }
     } else {
