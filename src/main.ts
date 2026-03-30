@@ -37,9 +37,9 @@ bot.on("message", async (ctx) => {
     if (now - messageDate > 5) return;
 
     const youtubeLink = ctx.message.text.trim();
-    ctx.sendMessage("<<<...Downloading....>>> Please wait.👽");
     if (checkIfYoutubeLinkIsValid(youtubeLink)) {
       try {
+        ctx.sendMessage("<<<...Downloading....>>> Please wait.👽");
         const title = await getVideoTitle(youtubeLink);
         const mp4FilePath = await downloadYoutubeVideo(youtubeLink);
         const mp3FilePath = await convertMp4ToMp3(mp4FilePath);
