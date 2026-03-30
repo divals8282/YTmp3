@@ -44,8 +44,6 @@ bot.on("message", async (ctx) => {
         const mp4FilePath = await downloadYoutubeVideo(youtubeLink);
         const mp3FilePath = await convertMp4ToMp3(mp4FilePath);
 
-        console.log({ title });
-
         await ctx.sendAudio({ source: mp3FilePath, filename: `${title}.mp3` });
         ctx.sendMessage("👽Enjoy!!!, TUC! TUC! TUC!👽");
         fs.unlink(mp4FilePath, () => {});
